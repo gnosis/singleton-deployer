@@ -58,29 +58,39 @@ exports.truffleDeployer = function (web3) {
     var factory = new singleton_factory_deployer_yul_1.YulSingletonFactory(provider);
     return new TruffleSingletonDeployer(factory, provider);
 };
-exports.deployTruffleContract = function (web3, artifact) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, exports.truffleDeployer(web3).deploy(artifact)];
-            case 1: return [2 /*return*/, _a.sent()];
-        }
+exports.deployTruffleContract = function (web3, artifact) {
+    var args = [];
+    for (var _i = 2; _i < arguments.length; _i++) {
+        args[_i - 2] = arguments[_i];
+    }
+    return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, exports.truffleDeployer(web3).deployWithArgs(artifact, args)];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
     });
-}); };
+};
 var TruffleSingletonDeployer = /** @class */ (function (_super) {
     __extends(TruffleSingletonDeployer, _super);
     function TruffleSingletonDeployer() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    TruffleSingletonDeployer.prototype.deploy = function (artifact, options) {
+    TruffleSingletonDeployer.prototype.deployWithArgs = function (artifact, args, options) {
         return __awaiter(this, void 0, void 0, function () {
-            var artifactName, deploymentInfo, contractAddress, transactionHash, newContract, addressOnArtifact;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var artifactName, deployTx, deploymentInfo, contractAddress, transactionHash, newContract, addressOnArtifact;
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0:
                         artifactName = artifact.contractName || "Artifact";
-                        return [4 /*yield*/, this.deployContract(artifact.bytecode, options)];
+                        return [4 /*yield*/, (_a = artifact.new).request.apply(_a, args)];
                     case 1:
-                        deploymentInfo = _a.sent();
+                        deployTx = _b.sent();
+                        return [4 /*yield*/, this.deployContract(deployTx.data, options)];
+                    case 2:
+                        deploymentInfo = _b.sent();
                         contractAddress = deploymentInfo.contractAddress, transactionHash = deploymentInfo.transactionHash, newContract = deploymentInfo.newContract;
                         if (newContract) {
                             console.log("Deployed " + artifactName + " at " + contractAddress);
@@ -111,6 +121,9 @@ var TruffleSingletonDeployer = /** @class */ (function (_super) {
                 }
             });
         });
+    };
+    TruffleSingletonDeployer.prototype.deploy = function (artifact, options) {
+        return this.deployWithArgs(artifact, [], options);
     };
     return TruffleSingletonDeployer;
 }(singleton_factory_deployer_core_1.SingletonDeployer));

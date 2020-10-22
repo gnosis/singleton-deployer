@@ -9,14 +9,16 @@ export const truffleDeployer = (web3: web3): TruffleSingletonDeployer => {
     return new TruffleSingletonDeployer(factory, provider)
 }
 
-export const deployTruffleContract = async (web3: web3, artifact: any): Promise<DeploymentInfo> => {
-    return await truffleDeployer(web3).deploy(artifact)
+export const deployTruffleContract = async (web3: web3, artifact: any, ...args: any[]): Promise<DeploymentInfo> => {
+    return await truffleDeployer(web3).deployWithArgs(artifact, args)
 }
 
 export class TruffleSingletonDeployer extends SingletonDeployer {
-    async deploy(artifact: any, options?: DeployOptions): Promise<DeploymentInfo> {
+
+    async deployWithArgs(artifact: any, args: any[], options?: DeployOptions): Promise<DeploymentInfo> {
         const artifactName = artifact.contractName || "Artifact"
-        const deploymentInfo = await this.deployContract(artifact.bytecode, options);
+        const deployTx = await artifact.new.request(...args)
+        const deploymentInfo = await this.deployContract(deployTx.data, options);
         const { contractAddress, transactionHash, newContract } = deploymentInfo
         if (newContract) {
             console.log(`Deployed ${artifactName} at ${contractAddress}`);
@@ -44,5 +46,9 @@ export class TruffleSingletonDeployer extends SingletonDeployer {
             artifact.address = contractAddress;
         }
         return deploymentInfo
+    }
+
+    deploy(artifact: any, options?: DeployOptions): Promise<DeploymentInfo> {
+        return this.deployWithArgs(artifact, [], options)
     }
 }
