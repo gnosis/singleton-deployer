@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Singleton factory for Truffle",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

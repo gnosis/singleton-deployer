@@ -1,5 +1,6 @@
 {
   "name": "singleton-deployer",
+  "description": "Utils to use singleton factories to deploy a contract",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

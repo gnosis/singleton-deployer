@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Provider for singleton factory using web3js",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

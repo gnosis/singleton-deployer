@@ -32,7 +32,7 @@ npm manifest:
     "version": "1.0.0",
     "description": "Example how to use the singleton factory (EIP 2470) to deploy a contract",
     "homepage": "https://github.com/gnosis/singleton-deployer/example",
-    "license": "GPL-3.0",
+    "license": "MIT",
     "files": [
       "test"
     ],

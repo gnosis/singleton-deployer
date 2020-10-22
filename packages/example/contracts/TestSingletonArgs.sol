@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LGPL-3.0-only
+// SPDX-License-Identifier: LMIT-only
 pragma solidity >=0.7.0 <0.8.0;
 
 contract TestSingletonArgs {

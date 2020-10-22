@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Singleton factory based on EIP-2470 (https://eips.ethereum.org/EIPS/eip-2470)",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

@@ -1,9 +1,9 @@
 {
   "name": "@gnosis.pm/singleton-deployer-core",
   "version": "1.0.0",
-  "description": "Utils to use the singleton factory to deploy a contract",
+  "description": "Utils to use singleton factories to deploy a contract",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
