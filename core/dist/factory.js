@@ -99,7 +99,7 @@ var BaseSingletonFactory = /** @class */ (function () {
                         address = "";
                         _a.label = 2;
                     case 2:
-                        if (!!(address.toLowerCase() !== expectedAddress.toLowerCase() && tries < 10)) return [3 /*break*/, 7];
+                        if (!(address.toLowerCase() !== expectedAddress.toLowerCase() && tries < 10)) return [3 /*break*/, 7];
                         tries++;
                         _a.label = 3;
                     case 3:

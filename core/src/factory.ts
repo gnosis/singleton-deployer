@@ -37,7 +37,7 @@ export abstract class BaseSingletonFactory implements SingletonFactory {
         let estimate = await this.provider.estimateGas(tx)
         let tries = 0
         let address = ""
-        while (!(address.toLowerCase() !== expectedAddress.toLowerCase() && tries < 10)) {
+        while (address.toLowerCase() !== expectedAddress.toLowerCase() && tries < 10) {
             tries++;
             try {
                 address = await this.simulateDeploy({ ...tx, gas: estimate })
