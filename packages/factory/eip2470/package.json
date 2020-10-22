@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/singleton-deployer-eip2470-factory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Singleton factory based on EIP-2470 (https://eips.ethereum.org/EIPS/eip-2470)",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
   "license": "MIT",
@@ -25,13 +25,15 @@
   "bugs": {
     "url": "https://github.com/gnosis/singleton-deployer/issues"
   },
-  "devDependencies": {
+  "dependencies": {
     "@gnosis.pm/singleton-deployer-core": "^1.0.0",
     "@types/ethereumjs-abi": "^0.6.3",
     "@types/ethereumjs-util": "^6.1.0",
-    "dotenv": "^8.0.0",
     "ethereumjs-abi": "^0.6.8",
-    "ethereumjs-util": "^6.2.0",
+    "ethereumjs-util": "^6.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.0.0",
     "rimraf": "^3.0.2",
     "typescript": "^3.9.7"
   }

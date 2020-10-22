@@ -3,21 +3,25 @@ Singleton deployer
 
 Usage with truffle migrations
 -----------------------------
+### Install with yarn:
+
+```bash
+yarn add @gnosis.pm/singleton-deployer-truffle
+```
+
+### Example migration
 ```js
-const UserContract = artifacts.require("./UserContract.sol")
-const { TruffleSingletonDeployer } = require('@gnosis.pm/singleton-deployer-truffle');
-await deployTruffleContract(web3, UserContract, contructorArg1, contructorArg2)
+const { deployTruffleContract } = require('@gnosis.pm/singleton-deployer-truffle');
+const UserContract = artifacts.require("UserContract");
+
+module.exports = function(deployer) {
+  deployer.then(async () => {
+    await deployTruffleContract(web3, UserContract, contructorArg1, contructorArg2);
+  })
+};
 ```
 
 See tests in example package for more details.
-
-Build
------
-### Install requirements with yarn:
-
-```bash
-yarn build
-```
 
 Security and Liability
 ----------------------
