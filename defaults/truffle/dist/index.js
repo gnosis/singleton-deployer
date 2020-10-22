@@ -50,12 +50,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TruffleSingletonDeployer = exports.deployTruffleContract = exports.truffleDeployer = void 0;
-var singleton_factory_deployer_core_1 = require("@gnosis.pm/singleton-factory-deployer-core");
-var singleton_factory_deployer_yul_1 = require("@gnosis.pm/singleton-factory-deployer-yul");
-var singleton_factory_deployer_web3js_1 = require("@gnosis.pm/singleton-factory-deployer-web3js");
+var singleton_deployer_core_1 = require("@gnosis.pm/singleton-deployer-core");
+var singleton_deployer_yul_factory_1 = require("@gnosis.pm/singleton-deployer-yul-factory");
+var singleton_deployer_web3js_provider_1 = require("@gnosis.pm/singleton-deployer-web3js-provider");
 exports.truffleDeployer = function (web3) {
-    var provider = new singleton_factory_deployer_web3js_1.Web3jsProvider(web3);
-    var factory = new singleton_factory_deployer_yul_1.YulSingletonFactory(provider);
+    var provider = new singleton_deployer_web3js_provider_1.Web3jsProvider(web3);
+    var factory = new singleton_deployer_yul_factory_1.YulSingletonFactory(provider);
     return new TruffleSingletonDeployer(factory, provider);
 };
 exports.deployTruffleContract = function (web3, artifact) {
@@ -126,6 +126,6 @@ var TruffleSingletonDeployer = /** @class */ (function (_super) {
         return this.deployWithArgs(artifact, [], options);
     };
     return TruffleSingletonDeployer;
-}(singleton_factory_deployer_core_1.SingletonDeployer));
+}(singleton_deployer_core_1.SingletonDeployer));
 exports.TruffleSingletonDeployer = TruffleSingletonDeployer;
 //# sourceMappingURL=index.js.map

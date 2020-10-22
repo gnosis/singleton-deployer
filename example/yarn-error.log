@@ -2,7 +2,7 @@ Arguments:
   /usr/bin/node /usr/share/yarn/lib/cli.js run build
 
 PATH: 
-  /tmp/yarn--1603398097946-0.6138212421941815:/home/rmeissner/projects/singleton-factory-deployer/node_modules/.bin:/home/rmeissner/.config/yarn/link/node_modules/.bin:/home/rmeissner/projects/singleton-factory-deployer/node_modules/.bin:/home/rmeissner/.yarn/bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/home/rmeissner/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/home/rmeissner/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/d/Programme/Python27/:/mnt/d/Programme/Python27/Scripts:/mnt/c/ProgramData/Oracle/Java/javapath:/mnt/c/Program Files/Java/jdk1.8.0_92/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/d/Programme/MiKTeX 2.9/miktex/bin/:/mnt/d/Programme/Python27:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/c/Program Files (x86)/Heroku/bin:/mnt/c/Program Files (x86)/git/cmd:/mnt/c/Program Files (x86)/Git/cmd:/mnt/d/Programme/nodejs/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/d/Programme/Microsoft VS Code/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/Richard/scoop/shims:/mnt/d/Programme/Python37/Scripts/:/mnt/d/Programme/Python37/:/mnt/d/Programme/Ruby25-x64/bin:/mnt/c/Users/Richard/AppData/Local/Programs/Python/Python36/Scripts/:/mnt/c/Users/Richard/AppData/Local/Programs/Python/Python36/:/mnt/c/Program Files/PostgreSQL/9.5/bin:/mnt/c/Program Files (x86)/sqlite-tools:/mnt/c/Program Files (x86)/Binaries:/mnt/c/Users/Richard/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Richard/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:/mnt/c/Users/Richard/AppData/Local/atom/bin:/mnt/c/Users/Richard/AppData/Roaming/npm:/mnt/d/Programme/Heroku/bin:/mnt/c/Users/Richard/AppData/Local/GitHubDesktop/bin:/mnt/d/Programme/FAHClient:/mnt/c/Users/Richard/AppData/Local/Microsoft/WindowsApps
+  /tmp/yarn--1603398097946-0.6138212421941815:/home/rmeissner/projects/singleton-deployer/node_modules/.bin:/home/rmeissner/.config/yarn/link/node_modules/.bin:/home/rmeissner/projects/singleton-deployer/node_modules/.bin:/home/rmeissner/.yarn/bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/home/rmeissner/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/home/rmeissner/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/d/Programme/Python27/:/mnt/d/Programme/Python27/Scripts:/mnt/c/ProgramData/Oracle/Java/javapath:/mnt/c/Program Files/Java/jdk1.8.0_92/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/d/Programme/MiKTeX 2.9/miktex/bin/:/mnt/d/Programme/Python27:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/c/Program Files (x86)/Heroku/bin:/mnt/c/Program Files (x86)/git/cmd:/mnt/c/Program Files (x86)/Git/cmd:/mnt/d/Programme/nodejs/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/d/Programme/Microsoft VS Code/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/Richard/scoop/shims:/mnt/d/Programme/Python37/Scripts/:/mnt/d/Programme/Python37/:/mnt/d/Programme/Ruby25-x64/bin:/mnt/c/Users/Richard/AppData/Local/Programs/Python/Python36/Scripts/:/mnt/c/Users/Richard/AppData/Local/Programs/Python/Python36/:/mnt/c/Program Files/PostgreSQL/9.5/bin:/mnt/c/Program Files (x86)/sqlite-tools:/mnt/c/Program Files (x86)/Binaries:/mnt/c/Users/Richard/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Richard/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:/mnt/c/Users/Richard/AppData/Local/atom/bin:/mnt/c/Users/Richard/AppData/Roaming/npm:/mnt/d/Programme/Heroku/bin:/mnt/c/Users/Richard/AppData/Local/GitHubDesktop/bin:/mnt/d/Programme/FAHClient:/mnt/c/Users/Richard/AppData/Local/Microsoft/WindowsApps
 
 Yarn version: 
   1.22.5
@@ -28,10 +28,10 @@ Trace:
 
 npm manifest: 
   {
-    "name": "@gnosis.pm/singleton-factory-deployer-example",
+    "name": "@gnosis.pm/singleton-deployer-example",
     "version": "1.0.0",
     "description": "Example how to use the singleton factory (EIP 2470) to deploy a contract",
-    "homepage": "https://github.com/gnosis/singleton-factory-deployer/example",
+    "homepage": "https://github.com/gnosis/singleton-deployer/example",
     "license": "GPL-3.0",
     "files": [
       "test"
@@ -46,17 +46,17 @@ npm manifest:
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/gnosis/singleton-factory-deployer.git"
+      "url": "git+https://github.com/gnosis/singleton-deployer.git"
     },
     "keywords": [
       "Ethereum"
     ],
     "author": "stefan@gnosis.pm",
     "bugs": {
-      "url": "https://github.com/gnosis/singleton-factory-deployer/issues"
+      "url": "https://github.com/gnosis/singleton-deployer/issues"
     },
     "devDependencies": {
-      "@gnosis.pm/singleton-factory-deployer-core": "^1.0.0",
+      "@gnosis.pm/singleton-deployer-core": "^1.0.0",
       "@truffle/hdwallet-provider": "^1.0.0",
       "dotenv": "^8.0.0",
       "ganache-cli": "6.3.0",

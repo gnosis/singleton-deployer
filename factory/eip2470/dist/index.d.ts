@@ -1,4 +1,4 @@
-import { BaseSingletonFactory, ProviderAdapter, Transaction } from '@gnosis.pm/singleton-factory-deployer-core';
+import { BaseSingletonFactory, ProviderAdapter, Transaction } from '@gnosis.pm/singleton-deployer-core';
 export declare class EIP2470SingletonFactory extends BaseSingletonFactory {
     readonly address: string;
     readonly deployer: string;

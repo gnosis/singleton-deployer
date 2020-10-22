@@ -1,8 +1,8 @@
 const TestSingletonArgs = artifacts.require("./TestSingletonArgs.sol")
-const { EIP2470SingletonFactory } = require('@gnosis.pm/singleton-factory-deployer-eip2470');
-const { Web3jsProvider } = require('@gnosis.pm/singleton-factory-deployer-web3js');
-const { YulSingletonFactory } = require('@gnosis.pm/singleton-factory-deployer-yul');
-const { TruffleSingletonDeployer } = require('@gnosis.pm/singleton-factory-deployer-truffle');
+const { EIP2470SingletonFactory } = require('@gnosis.pm/singleton-deployer-eip2470-factory');
+const { Web3jsProvider } = require('@gnosis.pm/singleton-deployer-web3js-provider');
+const { YulSingletonFactory } = require('@gnosis.pm/singleton-deployer-yul-factory');
+const { TruffleSingletonDeployer } = require('@gnosis.pm/singleton-deployer-truffle');
 
 async function logGasUsage(subject, transactionHash) {
     let receipt = await web3.eth.getTransactionReceipt(transactionHash)

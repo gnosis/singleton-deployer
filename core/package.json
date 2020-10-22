@@ -1,8 +1,8 @@
 {
-  "name": "@gnosis.pm/singleton-factory-deployer-core",
+  "name": "@gnosis.pm/singleton-deployer-core",
   "version": "1.0.0",
   "description": "Utils to use the singleton factory to deploy a contract",
-  "homepage": "https://github.com/gnosis/singleton-factory-deployer/",
+  "homepage": "https://github.com/gnosis/singleton-deployer/",
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gnosis/singleton-factory-deployer.git"
+    "url": "git+https://github.com/gnosis/singleton-deployer.git"
   },
   "keywords": [
     "Ethereum"
   ],
   "author": "richard@gnosis.pm",
   "bugs": {
-    "url": "https://github.com/gnosis/singleton-factory-deployer/issues"
+    "url": "https://github.com/gnosis/singleton-deployer/issues"
   },
   "devDependencies": {
     "@types/ethereumjs-abi": "^0.6.3",

@@ -1,5 +1,5 @@
 
-import { BaseSingletonFactory, ProviderAdapter, Transaction } from '@gnosis.pm/singleton-factory-deployer-core'
+import { BaseSingletonFactory, ProviderAdapter, Transaction } from '@gnosis.pm/singleton-deployer-core'
 import { simpleEncode, simpleDecode } from 'ethereumjs-abi'
 import { bufferToHex, toBuffer } from 'ethereumjs-util'
 

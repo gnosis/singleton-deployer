@@ -1,7 +1,7 @@
 import web3 from 'web3'
-import { SingletonDeployer, DeployOptions, DeploymentInfo } from '@gnosis.pm/singleton-factory-deployer-core'
-import { YulSingletonFactory } from '@gnosis.pm/singleton-factory-deployer-yul'
-import { Web3jsProvider } from '@gnosis.pm/singleton-factory-deployer-web3js'
+import { SingletonDeployer, DeployOptions, DeploymentInfo } from '@gnosis.pm/singleton-deployer-core'
+import { YulSingletonFactory } from '@gnosis.pm/singleton-deployer-yul-factory'
+import { Web3jsProvider } from '@gnosis.pm/singleton-deployer-web3js-provider'
 
 export const truffleDeployer = (web3: web3): TruffleSingletonDeployer => {
     const provider = new Web3jsProvider(web3)

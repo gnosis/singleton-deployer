@@ -1,8 +1,8 @@
 {
-  "name": "@gnosis.pm/singleton-factory-deployer-yul",
+  "name": "@gnosis.pm/singleton-deployer-yul-factory",
   "version": "1.0.0",
   "description": "Singleton factory based on yul factory (https://github.com/Zoltu/deterministic-deployment-proxy)",
-  "homepage": "https://github.com/gnosis/singleton-factory-deployer/",
+  "homepage": "https://github.com/gnosis/singleton-deployer/",
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,17 +16,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gnosis/singleton-factory-deployer.git"
+    "url": "git+https://github.com/gnosis/singleton-deployer.git"
   },
   "keywords": [
     "Ethereum"
   ],
   "author": "richard@gnosis.pm",
   "bugs": {
-    "url": "https://github.com/gnosis/singleton-factory-deployer/issues"
+    "url": "https://github.com/gnosis/singleton-deployer/issues"
   },
   "devDependencies": {
-    "@gnosis.pm/singleton-factory-deployer-core": "^1.0.0",
+    "@gnosis.pm/singleton-deployer-core": "^1.0.0",
     "@types/ethereumjs-abi": "^0.6.3",
     "@types/ethereumjs-util": "^6.1.0",
     "dotenv": "^8.0.0",

@@ -1,12 +1,12 @@
 {
-  "name": "singleton-factory-deployer",
+  "name": "singleton-deployer",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
     "build": "yarn workspaces run build",
-    "test": "yarn workspaces run build && yarn && yarn workspace @gnosis.pm/singleton-factory-deployer-example test"
+    "test": "yarn workspaces run build && yarn && yarn workspace @gnosis.pm/singleton-deployer-example test"
   },
   "workspaces": [
     "core", 

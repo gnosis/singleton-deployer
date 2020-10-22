@@ -1,4 +1,4 @@
-import { ProviderAdapter, Transaction } from '@gnosis.pm/singleton-factory-deployer-core'
+import { ProviderAdapter, Transaction } from '@gnosis.pm/singleton-deployer-core'
 import web3 from 'web3'
 import { PromiEvent, TransactionReceipt } from 'web3-core'
 

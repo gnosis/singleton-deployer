@@ -50,7 +50,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.YulSingletonFactory = void 0;
-var singleton_factory_deployer_core_1 = require("@gnosis.pm/singleton-factory-deployer-core");
+var singleton_deployer_core_1 = require("@gnosis.pm/singleton-deployer-core");
 var YulSingletonFactory = /** @class */ (function (_super) {
     __extends(YulSingletonFactory, _super);
     function YulSingletonFactory(provider) {
@@ -86,6 +86,6 @@ var YulSingletonFactory = /** @class */ (function (_super) {
         });
     };
     return YulSingletonFactory;
-}(singleton_factory_deployer_core_1.BaseSingletonFactory));
+}(singleton_deployer_core_1.BaseSingletonFactory));
 exports.YulSingletonFactory = YulSingletonFactory;
 //# sourceMappingURL=index.js.map

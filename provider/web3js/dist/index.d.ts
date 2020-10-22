@@ -1,4 +1,4 @@
-import { ProviderAdapter, Transaction } from '@gnosis.pm/singleton-factory-deployer-core';
+import { ProviderAdapter, Transaction } from '@gnosis.pm/singleton-deployer-core';
 import web3 from 'web3';
 export declare class Web3jsProvider implements ProviderAdapter {
     readonly web3: web3;

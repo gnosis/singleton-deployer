@@ -1,8 +1,8 @@
 {
-  "name": "@gnosis.pm/singleton-factory-deployer-truffle",
+  "name": "@gnosis.pm/singleton-deployer-truffle",
   "version": "1.0.0",
   "description": "Singleton factory for Truffle",
-  "homepage": "https://github.com/gnosis/singleton-factory-deployer/",
+  "homepage": "https://github.com/gnosis/singleton-deployer/",
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,19 +16,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gnosis/singleton-factory-deployer.git"
+    "url": "git+https://github.com/gnosis/singleton-deployer.git"
   },
   "keywords": [
     "Ethereum"
   ],
   "author": "richard@gnosis.pm",
   "bugs": {
-    "url": "https://github.com/gnosis/singleton-factory-deployer/issues"
+    "url": "https://github.com/gnosis/singleton-deployer/issues"
   },
   "devDependencies": {
-    "@gnosis.pm/singleton-factory-deployer-core": "^1.0.0",
-    "@gnosis.pm/singleton-factory-deployer-web3js": "^1.0.0",
-    "@gnosis.pm/singleton-factory-deployer-yul": "^1.0.0",
+    "@gnosis.pm/singleton-deployer-core": "^1.0.0",
+    "@gnosis.pm/singleton-deployer-web3js-provider": "^1.0.0",
+    "@gnosis.pm/singleton-deployer-yul-factory": "^1.0.0",
     "dotenv": "^8.0.0",
     "rimraf": "^3.0.2",
     "typescript": "^3.9.7"

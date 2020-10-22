@@ -50,7 +50,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EIP2470SingletonFactory = void 0;
-var singleton_factory_deployer_core_1 = require("@gnosis.pm/singleton-factory-deployer-core");
+var singleton_deployer_core_1 = require("@gnosis.pm/singleton-deployer-core");
 var ethereumjs_abi_1 = require("ethereumjs-abi");
 var ethereumjs_util_1 = require("ethereumjs-util");
 var EIP2470SingletonFactory = /** @class */ (function (_super) {
@@ -86,6 +86,6 @@ var EIP2470SingletonFactory = /** @class */ (function (_super) {
         });
     };
     return EIP2470SingletonFactory;
-}(singleton_factory_deployer_core_1.BaseSingletonFactory));
+}(singleton_deployer_core_1.BaseSingletonFactory));
 exports.EIP2470SingletonFactory = EIP2470SingletonFactory;
 //# sourceMappingURL=index.js.map
