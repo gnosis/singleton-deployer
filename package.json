@@ -5,14 +5,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "yarn workspaces run build",
-    "test": "yarn workspaces run build && yarn && yarn workspace @gnosis.pm/singleton-deployer-example test"
+    "build": "yarn && yarn workspaces run build",
+    "test": "yarn build && yarn workspace @gnosis.pm/singleton-deployer-example test"
   },
-  "workspaces": [
-    "core", 
-    "factory/*",
-    "provider/*",
-    "defaults/*",
-    "example"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/core",
+      "packages/provider/*",
+      "packages/factory/*",
+      "packages/defaults/*",
+      "packages/example"
+    ]
+  }
 }
