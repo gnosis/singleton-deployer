@@ -1,0 +1,12 @@
+build/
+node_modules/
+.DS_Store
+.zos.session
+.openzeppelin/.session
+env/
+.env
+.env.deploy
+bin/
+solc
+coverage.json
+/coverage

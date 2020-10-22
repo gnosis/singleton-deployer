@@ -1,0 +1,37 @@
+{
+  "name": "@gnosis.pm/singleton-factory-deployer-core",
+  "version": "1.0.0",
+  "description": "Utils to use the singleton factory to deploy a contract",
+  "homepage": "https://github.com/gnosis/singleton-factory-deployer/",
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "scripts": {
+    "prepublish": "yarn build",
+    "build": "yarn rimraf dist && yarn tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnosis/singleton-factory-deployer.git"
+  },
+  "keywords": [
+    "Ethereum"
+  ],
+  "author": "richard@gnosis.pm",
+  "bugs": {
+    "url": "https://github.com/gnosis/singleton-factory-deployer/issues"
+  },
+  "devDependencies": {
+    "@types/ethereumjs-abi": "^0.6.3",
+    "@types/ethereumjs-util": "^6.1.0",
+    "dotenv": "^8.0.0",
+    "ethereumjs-abi": "^0.6.8",
+    "ethereumjs-util": "^6.2.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.7"
+  }
+}
