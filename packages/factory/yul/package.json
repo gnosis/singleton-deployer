@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/singleton-deployer-yul-factory",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Singleton factory based on yul factory (https://github.com/Zoltu/deterministic-deployment-proxy)",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
   "license": "MIT",

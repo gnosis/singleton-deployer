@@ -12,6 +12,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -78,19 +89,22 @@ var TruffleSingletonDeployer = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TruffleSingletonDeployer.prototype.deployWithArgs = function (artifact, args, options) {
+        var _a, _b;
         return __awaiter(this, void 0, void 0, function () {
-            var artifactName, deployTx, deploymentInfo, contractAddress, transactionHash, newContract, addressOnArtifact;
-            var _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var artifactName, deployTx, opts, deploymentInfo, contractAddress, transactionHash, newContract, addressOnArtifact;
+            var _c;
+            return __generator(this, function (_d) {
+                switch (_d.label) {
                     case 0:
                         artifactName = artifact.contractName || "Artifact";
-                        return [4 /*yield*/, (_a = artifact.new).request.apply(_a, args)];
+                        return [4 /*yield*/, (_c = artifact.new).request.apply(_c, args)];
                     case 1:
-                        deployTx = _b.sent();
-                        return [4 /*yield*/, this.deployContract(deployTx.data, options)];
+                        deployTx = _d.sent();
+                        console.log((_a = artifact.class_defaults) === null || _a === void 0 ? void 0 : _a.gasPrice);
+                        opts = __assign({ gasPrice: (_b = artifact.class_defaults) === null || _b === void 0 ? void 0 : _b.gasPrice }, options);
+                        return [4 /*yield*/, this.deployContract(deployTx.data, opts)];
                     case 2:
-                        deploymentInfo = _b.sent();
+                        deploymentInfo = _d.sent();
                         contractAddress = deploymentInfo.contractAddress, transactionHash = deploymentInfo.transactionHash, newContract = deploymentInfo.newContract;
                         if (newContract) {
                             console.log("Deployed " + artifactName + " at " + contractAddress);

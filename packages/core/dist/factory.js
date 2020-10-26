@@ -112,14 +112,14 @@ var BaseSingletonFactory = /** @class */ (function () {
                         e_1 = _a.sent();
                         return [3 /*break*/, 6];
                     case 6:
-                        estimate = Math.ceil(estimate * 1.2);
+                        estimate = Math.ceil(estimate * 1.25);
                         return [3 /*break*/, 2];
                     case 7: return [2 /*return*/, estimate];
                 }
             });
         });
     };
-    BaseSingletonFactory.prototype.deploy = function (bytecode, salt, gasLimit) {
+    BaseSingletonFactory.prototype.deploy = function (bytecode, salt, gasLimit, gasPrice) {
         return __awaiter(this, void 0, void 0, function () {
             var data, tx, gas, _a;
             return __generator(this, function (_b) {
@@ -143,7 +143,7 @@ var BaseSingletonFactory = /** @class */ (function () {
                         _b.label = 4;
                     case 4:
                         gas = _a;
-                        return [4 /*yield*/, this.provider.sendTransaction(__assign(__assign({}, tx), { gas: gas }))];
+                        return [4 /*yield*/, this.provider.sendTransaction(__assign(__assign({}, tx), { gas: gas, gasPrice: gasPrice }))];
                     case 5: return [2 /*return*/, _b.sent()];
                 }
             });

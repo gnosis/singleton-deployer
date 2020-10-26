@@ -1,6 +1,6 @@
 export interface SingletonFactory {
     calculateSingletonAddress(bytecode: string, salt: string): string;
-    deploy(bytecode: string, salt: string, gasLimit?: number): Promise<string>;
+    deploy(bytecode: string, salt: string, gasLimit?: number, gasPrice?: number): Promise<string>;
 }
 export interface Transaction {
     from?: string;
@@ -8,6 +8,7 @@ export interface Transaction {
     value: string | number;
     data?: string;
     gas?: number;
+    gasPrice?: number;
 }
 export interface ProviderAdapter {
     account(): Promise<string>;
@@ -20,6 +21,7 @@ export interface ProviderAdapter {
 export interface DeployOptions {
     salt?: string;
     gasLimit?: number;
+    gasPrice?: number;
 }
 export interface DeploymentInfo {
     transactionHash?: string;

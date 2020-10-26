@@ -11,5 +11,5 @@ export declare abstract class BaseSingletonFactory implements SingletonFactory {
     ensureFactory(): Promise<void>;
     calculateSingletonAddress(bytecode: string, salt: string): string;
     estimateDeploymentGas(tx: Transaction, expectedAddress: string): Promise<number>;
-    deploy(bytecode: string, salt: string, gasLimit?: number): Promise<string>;
+    deploy(bytecode: string, salt: string, gasLimit?: number, gasPrice?: number): Promise<string>;
 }

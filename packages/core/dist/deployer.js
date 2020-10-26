@@ -56,7 +56,7 @@ var SingletonDeployer = /** @class */ (function () {
                         contractExists = _a.sent();
                         if (contractExists)
                             return [2 /*return*/, { newContract: true, contractAddress: contractAddress }];
-                        return [4 /*yield*/, this.factory.deploy(bytecode, deploymentSalt, opts.gasLimit)];
+                        return [4 /*yield*/, this.factory.deploy(bytecode, deploymentSalt, opts.gasLimit, opts.gasPrice)];
                     case 2:
                         transactionHash = _a.sent();
                         return [4 /*yield*/, this.provider.contractExists(contractAddress)];

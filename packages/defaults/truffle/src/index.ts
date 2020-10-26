@@ -18,7 +18,11 @@ export class TruffleSingletonDeployer extends SingletonDeployer {
     async deployWithArgs(artifact: any, args: any[], options?: DeployOptions): Promise<DeploymentInfo> {
         const artifactName = artifact.contractName || "Artifact"
         const deployTx = await artifact.new.request(...args)
-        const deploymentInfo = await this.deployContract(deployTx.data, options);
+        const opts = {
+            gasPrice: artifact.class_defaults?.gasPrice,
+            ...options
+        }
+        const deploymentInfo = await this.deployContract(deployTx.data, opts);
         const { contractAddress, transactionHash, newContract } = deploymentInfo
         if (newContract) {
             console.log(`Deployed ${artifactName} at ${contractAddress}`);

@@ -42,12 +42,12 @@ export abstract class BaseSingletonFactory implements SingletonFactory {
             try {
                 address = await this.simulateDeploy({ ...tx, gas: estimate })
             } catch (e) { }
-            estimate = Math.ceil(estimate * 1.2);
+            estimate = Math.ceil(estimate * 1.25);
         }
         return estimate
     }
 
-    async deploy(bytecode: string, salt: string, gasLimit?: number): Promise<string> {
+    async deploy(bytecode: string, salt: string, gasLimit?: number, gasPrice?: number): Promise<string> {
         const data = await this.buildDeployData(bytecode, salt)
         await this.ensureFactory()
         const tx = {
@@ -56,6 +56,6 @@ export abstract class BaseSingletonFactory implements SingletonFactory {
             data: data
         }
         const gas = gasLimit || await this.estimateDeploymentGas(tx, this.calculateSingletonAddress(bytecode, salt))
-        return await this.provider.sendTransaction({ ...tx, gas })
+        return await this.provider.sendTransaction({ ...tx, gas, gasPrice })
     }
 }

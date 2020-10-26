@@ -1,6 +1,6 @@
 export interface SingletonFactory {
     calculateSingletonAddress(bytecode: string, salt: string): string;
-    deploy(bytecode: string, salt: string, gasLimit?: number): Promise<string>;
+    deploy(bytecode: string, salt: string, gasLimit?: number, gasPrice?: number): Promise<string>;
 }
 
 export interface Transaction {
@@ -9,6 +9,7 @@ export interface Transaction {
     value: string | number;
     data?: string;
     gas?: number;
+    gasPrice?: number;
 }
 
 export interface ProviderAdapter {
@@ -23,6 +24,7 @@ export interface ProviderAdapter {
 export interface DeployOptions {
     salt?: string;
     gasLimit?: number;
+    gasPrice?: number;
 }
 
 export interface DeploymentInfo {
@@ -45,7 +47,7 @@ export class SingletonDeployer {
         const contractExists = await this.provider.contractExists(contractAddress)
         if (contractExists)
             return { newContract: true, contractAddress }
-        const transactionHash = await this.factory.deploy(bytecode, deploymentSalt, opts.gasLimit)
+        const transactionHash = await this.factory.deploy(bytecode, deploymentSalt, opts.gasLimit, opts.gasPrice)
         const contractDeployed = await this.provider.contractExists(contractAddress)
         if (!contractDeployed) throw Error("Contract not deployed");
         return { transactionHash, newContract: true, contractAddress }
