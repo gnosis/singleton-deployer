@@ -89,22 +89,21 @@ var TruffleSingletonDeployer = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TruffleSingletonDeployer.prototype.deployWithArgs = function (artifact, args, options) {
-        var _a, _b;
+        var _a;
         return __awaiter(this, void 0, void 0, function () {
             var artifactName, deployTx, opts, deploymentInfo, contractAddress, transactionHash, newContract, addressOnArtifact;
-            var _c;
-            return __generator(this, function (_d) {
-                switch (_d.label) {
+            var _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         artifactName = artifact.contractName || "Artifact";
-                        return [4 /*yield*/, (_c = artifact.new).request.apply(_c, args)];
+                        return [4 /*yield*/, (_b = artifact.new).request.apply(_b, args)];
                     case 1:
-                        deployTx = _d.sent();
-                        console.log((_a = artifact.class_defaults) === null || _a === void 0 ? void 0 : _a.gasPrice);
-                        opts = __assign({ gasPrice: (_b = artifact.class_defaults) === null || _b === void 0 ? void 0 : _b.gasPrice }, options);
+                        deployTx = _c.sent();
+                        opts = __assign({ gasPrice: (_a = artifact.class_defaults) === null || _a === void 0 ? void 0 : _a.gasPrice }, options);
                         return [4 /*yield*/, this.deployContract(deployTx.data, opts)];
                     case 2:
-                        deploymentInfo = _d.sent();
+                        deploymentInfo = _c.sent();
                         contractAddress = deploymentInfo.contractAddress, transactionHash = deploymentInfo.transactionHash, newContract = deploymentInfo.newContract;
                         if (newContract) {
                             console.log("Deployed " + artifactName + " at " + contractAddress);
