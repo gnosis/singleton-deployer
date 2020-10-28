@@ -49,37 +49,47 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseSingletonFactory = void 0;
 var address_utils_1 = require("./address_utils");
+var number_utils_1 = require("./number_utils");
 var BaseSingletonFactory = /** @class */ (function () {
     function BaseSingletonFactory(provider) {
         this.provider = provider;
     }
     BaseSingletonFactory.prototype.ensureFactory = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var account, factoryDeployed;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var account, factoryDeployed, deployerFunds, _a, deploymentFunds, missingDeployerFunds;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0: return [4 /*yield*/, this.provider.account()];
                     case 1:
-                        account = _a.sent();
+                        account = _b.sent();
                         return [4 /*yield*/, this.provider.contractExists(this.address)];
                     case 2:
-                        factoryDeployed = _a.sent();
+                        factoryDeployed = _b.sent();
                         if (!factoryDeployed) return [3 /*break*/, 3];
                         console.log("SingletonFactory already deployed at " + this.address);
-                        return [3 /*break*/, 6];
-                    case 3: return [4 /*yield*/, this.provider.sendTransaction({
-                            from: account,
-                            to: this.deployer,
-                            value: this.deploymentCosts
-                        })];
+                        return [3 /*break*/, 8];
+                    case 3:
+                        _a = number_utils_1.toBN;
+                        return [4 /*yield*/, this.provider.balance(this.deployer)];
                     case 4:
-                        _a.sent();
-                        return [4 /*yield*/, this.provider.sendRawTransaction(this.deploymentTx)];
+                        deployerFunds = _a.apply(void 0, [_b.sent()]);
+                        deploymentFunds = number_utils_1.toBN(this.deploymentCosts);
+                        missingDeployerFunds = deploymentFunds.sub(deployerFunds);
+                        if (!missingDeployerFunds.gtn(0)) return [3 /*break*/, 6];
+                        return [4 /*yield*/, this.provider.sendTransaction({
+                                from: account,
+                                to: this.deployer,
+                                value: number_utils_1.toHexString(missingDeployerFunds)
+                            })];
                     case 5:
-                        _a.sent();
+                        _b.sent();
+                        _b.label = 6;
+                    case 6: return [4 /*yield*/, this.provider.sendRawTransaction(this.deploymentTx)];
+                    case 7:
+                        _b.sent();
                         console.log("Deployed SingletonFactory at " + this.address);
-                        _a.label = 6;
-                    case 6: return [2 /*return*/];
+                        _b.label = 8;
+                    case 8: return [2 /*return*/];
                 }
             });
         });
@@ -100,6 +110,8 @@ var BaseSingletonFactory = /** @class */ (function () {
                         _a.label = 2;
                     case 2:
                         if (!(address.toLowerCase() !== expectedAddress.toLowerCase() && tries < 10)) return [3 /*break*/, 7];
+                        // Increase the estimate by 25% every time (even initially, similar to truffle)
+                        estimate = Math.ceil(estimate * 1.25);
                         tries++;
                         _a.label = 3;
                     case 3:
@@ -111,9 +123,7 @@ var BaseSingletonFactory = /** @class */ (function () {
                     case 5:
                         e_1 = _a.sent();
                         return [3 /*break*/, 6];
-                    case 6:
-                        estimate = Math.ceil(estimate * 1.25);
-                        return [3 /*break*/, 2];
+                    case 6: return [3 /*break*/, 2];
                     case 7: return [2 /*return*/, estimate];
                 }
             });

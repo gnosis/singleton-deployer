@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/singleton-deployer-eip2470-factory",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Singleton factory based on EIP-2470 (https://eips.ethereum.org/EIPS/eip-2470)",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
   "license": "MIT",

@@ -4,7 +4,7 @@ export declare abstract class BaseSingletonFactory implements SingletonFactory {
     abstract readonly address: string;
     abstract readonly deployer: string;
     abstract readonly deploymentTx: string;
-    abstract readonly deploymentCosts: number;
+    abstract readonly deploymentCosts: string;
     constructor(provider: ProviderAdapter);
     abstract buildDeployData(bytecode: string, salt: string): Promise<string>;
     abstract simulateDeploy(tx: Transaction): Promise<string>;

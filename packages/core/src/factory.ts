@@ -1,4 +1,5 @@
 import { buildCreate2Address } from './address_utils'
+import { toBN, toHexString } from './number_utils'
 import { SingletonFactory, ProviderAdapter, Transaction } from './deployer';
 
 export abstract class BaseSingletonFactory implements SingletonFactory {
@@ -6,7 +7,7 @@ export abstract class BaseSingletonFactory implements SingletonFactory {
     abstract readonly address: string;
     abstract readonly deployer: string;
     abstract readonly deploymentTx: string;
-    abstract readonly deploymentCosts: number;
+    abstract readonly deploymentCosts: string;
     constructor(provider: ProviderAdapter) {
         this.provider = provider
     }
@@ -19,11 +20,16 @@ export abstract class BaseSingletonFactory implements SingletonFactory {
         if (factoryDeployed) {
             console.log("SingletonFactory already deployed at " + this.address)
         } else {
-            await this.provider.sendTransaction({
-                from: account,
-                to: this.deployer,
-                value: this.deploymentCosts
-            })
+            const deployerFunds = toBN(await this.provider.balance(this.deployer))
+            const deploymentFunds = toBN(this.deploymentCosts)
+            const missingDeployerFunds = deploymentFunds.sub(deployerFunds);
+            if (missingDeployerFunds.gtn(0)) {
+                await this.provider.sendTransaction({
+                    from: account,
+                    to: this.deployer,
+                    value: toHexString(missingDeployerFunds)
+                })
+            }
             await this.provider.sendRawTransaction(this.deploymentTx)
             console.log("Deployed SingletonFactory at " + this.address)
         }

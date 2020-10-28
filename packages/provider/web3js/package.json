@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/singleton-deployer-web3js-provider",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Provider for singleton factory using web3js",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
   "license": "MIT",

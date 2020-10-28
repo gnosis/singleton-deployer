@@ -21,6 +21,10 @@ export class Web3jsProvider implements ProviderAdapter {
         return account
     }
 
+    async balance(address: string): Promise<string> {
+        return await this.web3.eth.getBalance(address)
+    }
+
     async contractExists(address: string): Promise<boolean> {
         return (await this.web3.eth.getCode(address)) !== '0x'
     }

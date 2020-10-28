@@ -58,7 +58,7 @@ var YulSingletonFactory = /** @class */ (function (_super) {
         _this.address = "0x7A0D94F55792C434d74a40883C6ed8545E406D12";
         _this.deployer = "0x4c8D290a1B368ac4728d83a9e8321fC3af2b39b1";
         _this.deploymentTx = "0xf87e8085174876e800830186a08080ad601f80600e600039806000f350fe60003681823780368234f58015156014578182fd5b80825250506014600cf31ba02222222222222222222222222222222222222222222222222222222222222222a02222222222222222222222222222222222222222222222222222222222222222";
-        _this.deploymentCosts = 100000 * 100000000000; // gas limit * gas price (100 gwei)
+        _this.deploymentCosts = "0x" + (100000 * 100000000000).toString(16); // gas limit * gas price (100 gwei)
         return _this;
     }
     YulSingletonFactory.prototype.calculateSingletonAddress = function (bytecode, salt) {

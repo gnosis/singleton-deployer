@@ -4,6 +4,7 @@ export declare class Web3jsProvider implements ProviderAdapter {
     readonly web3: web3;
     constructor(web3: web3);
     account(): Promise<string>;
+    balance(address: string): Promise<string>;
     contractExists(address: string): Promise<boolean>;
     call(tx: Transaction): Promise<string>;
     estimateGas(tx: Transaction): Promise<number>;
