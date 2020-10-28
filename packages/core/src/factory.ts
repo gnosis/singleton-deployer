@@ -38,11 +38,12 @@ export abstract class BaseSingletonFactory implements SingletonFactory {
         let tries = 0
         let address = ""
         while (address.toLowerCase() !== expectedAddress.toLowerCase() && tries < 10) {
+            // Increase the estimate by 25% every time (even initially, similar to truffle)
+            estimate = Math.ceil(estimate * 1.25);
             tries++;
             try {
                 address = await this.simulateDeploy({ ...tx, gas: estimate })
             } catch (e) { }
-            estimate = Math.ceil(estimate * 1.25);
         }
         return estimate
     }
