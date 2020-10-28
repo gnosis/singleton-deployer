@@ -26,7 +26,7 @@
     "url": "https://github.com/gnosis/singleton-deployer/issues"
   },
   "dependencies": {
-    "@gnosis.pm/singleton-deployer-core": "^1.0.0",
+    "@gnosis.pm/singleton-deployer-core": "^1.1.0",
     "@types/ethereumjs-abi": "^0.6.3",
     "@types/ethereumjs-util": "^6.1.0",
     "ethereumjs-abi": "^0.6.8",
