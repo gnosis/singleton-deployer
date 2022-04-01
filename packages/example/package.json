@@ -8,7 +8,7 @@
     "test"
   ],
   "scripts": {
-    "test": "run(){ run-with-testrpc -l 20000000 --noVMErrorsOnRPCResponse \"truffle test $@\"; }; run",
+    "test": "truffle test",
     "compile": "run(){ truffle compile $@; }; run",
     "coverage": "run(){ truffle run coverage $@; }; run",
     "deploy": "run(){ truffle deploy --network=$@; }; run",
@@ -27,9 +27,10 @@
     "url": "https://github.com/gnosis/singleton-deployer/issues"
   },
   "devDependencies": {
-    "@gnosis.pm/singleton-deployer-eip2470-factory": "^1.1.0",
-    "@gnosis.pm/singleton-deployer-yul-factory": "^1.1.0",
-    "@gnosis.pm/singleton-deployer-web3js-provider": "^1.1.0",
+    "@gnosis.pm/singleton-deployer-eip2470-factory": "^2.0.0",
+    "@gnosis.pm/singleton-deployer-yul-factory": "^2.0.0",
+    "@gnosis.pm/singleton-deployer-safe-factory": "^1.0.0",
+    "@gnosis.pm/singleton-deployer-web3js-provider": "^2.0.0",
     "@gnosis.pm/singleton-deployer-truffle": "^1.1.0",
     "@truffle/hdwallet-provider": "^1.0.0",
     "dotenv": "^8.0.0",

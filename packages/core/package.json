@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/singleton-deployer-core",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Utils to use singleton factories to deploy a contract",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
   "license": "MIT",

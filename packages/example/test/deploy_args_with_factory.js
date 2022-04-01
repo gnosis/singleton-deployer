@@ -6,16 +6,16 @@ const { YulSingletonFactory } = require('@gnosis.pm/singleton-deployer-yul-facto
 const { TruffleSingletonDeployer } = require('@gnosis.pm/singleton-deployer-truffle')
 
 contract('TestSingletonArgs', () => {
-    it('deploy with yarn factory + web3', async () => {
+    it('deploy with yul factory + web3', async () => {
         const provider = new Web3jsProvider(web3)
         const factory = new YulSingletonFactory(provider)
         const deployer = new TruffleSingletonDeployer(factory, provider)
-        const deploymentInfo = await deployer.deployWithArgs(TestSingletonArgs, ["Hello yarn"])
+        const deploymentInfo = await deployer.deployWithArgs(TestSingletonArgs, ["Hello yul"])
         await logGasUsage("TestSingleton deployment", deploymentInfo.transactionHash)
         assert.equal(TestSingletonArgs.address, deploymentInfo.contractAddress)
         const singleton = await TestSingletonArgs.at(deploymentInfo.contractAddress)
         assert.equal(await singleton.deployer(), factory.address)
-        assert.equal(await singleton.greeting(), "Hello yarn")
+        assert.equal(await singleton.greeting(), "Hello yul")
     })
 
     it('deploy with eip2470 factory + web3', async () => {

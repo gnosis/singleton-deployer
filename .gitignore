@@ -10,3 +10,4 @@ bin/
 solc
 coverage.json
 /coverage
+dist

@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/singleton-deployer-web3js-provider",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Provider for singleton factory using web3js",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "url": "https://github.com/gnosis/singleton-deployer/issues"
   },
   "dependencies": {
-    "@gnosis.pm/singleton-deployer-core": "^1.1.0",
+    "@gnosis.pm/singleton-deployer-core": "^2.0.0",
     "web3": "^1.3.0"
   },
   "devDependencies": {
