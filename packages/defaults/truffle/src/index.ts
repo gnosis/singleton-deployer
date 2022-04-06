@@ -1,16 +1,22 @@
 import web3 from 'web3'
 import { SingletonDeployer, DeployOptions, DeploymentInfo } from '@gnosis.pm/singleton-deployer-core'
 import { YulSingletonFactory } from '@gnosis.pm/singleton-deployer-yul-factory'
+import { SafeSingletonFactory } from '@gnosis.pm/singleton-deployer-safe-factory'
 import { Web3jsProvider } from '@gnosis.pm/singleton-deployer-web3js-provider'
 
-export const truffleDeployer = (web3: web3): TruffleSingletonDeployer => {
+export const truffleDeployer = (web3: web3, chainId: number, useEIP155DeployedFactory = false): TruffleSingletonDeployer => {
     const provider = new Web3jsProvider(web3)
-    const factory = new YulSingletonFactory(provider)
+    let factory = new YulSingletonFactory(provider, chainId)
+    if (useEIP155DeployedFactory) {
+        factory = new SafeSingletonFactory(provider, chainId)
+    }
     return new TruffleSingletonDeployer(factory, provider)
 }
 
-export const deployTruffleContract = async (web3: web3, artifact: any, ...args: any[]): Promise<DeploymentInfo> => {
-    return await truffleDeployer(web3).deployWithArgs(artifact, args)
+export const deployTruffleContract = async (web3: web3, artifact: any, useEIP155DeployedFactory = false, ...args: any[]): Promise<DeploymentInfo> => {
+    const chainId = await web3.eth.getChainId()
+
+    return await truffleDeployer(web3, chainId, useEIP155DeployedFactory).deployWithArgs(artifact, args)
 }
 
 export class TruffleSingletonDeployer extends SingletonDeployer {

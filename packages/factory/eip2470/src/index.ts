@@ -11,7 +11,7 @@ export class EIP2470SingletonFactory extends BaseSingletonFactory {
     readonly deploymentCosts: string = "0x" + (24_700_000_000_000_000).toString(16)
     readonly factoryAbiString = "deploy(bytes,bytes32):(address)"
 
-    constructor(provider: ProviderAdapter) {
+    constructor(provider: ProviderAdapter, public chainId: number) {
         super(provider)
     }
     

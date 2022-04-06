@@ -1,6 +1,6 @@
 {
   "name": "@gnosis.pm/singleton-deployer-yul-factory",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Singleton factory based on yul factory (https://github.com/Zoltu/deterministic-deployment-proxy)",
   "homepage": "https://github.com/gnosis/singleton-deployer/",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "url": "https://github.com/gnosis/singleton-deployer/issues"
   },
   "dependencies": {
-    "@gnosis.pm/singleton-deployer-core": "^1.1.0"
+    "@gnosis.pm/singleton-deployer-core": "^2.0.0"
   },
   "devDependencies": {
     "dotenv": "^8.0.0",

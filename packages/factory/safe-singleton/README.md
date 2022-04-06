@@ -1,13 +1,8 @@
-Singleton Deployer - Example
-============================
+Singleton Deployer - Safe Singleton Factory
+================================
 
-How to run
-----------
+Singleton deployer factory that uses a yul based implementation. More information can be found at https://github.com/gnosis/safe-singleton-factory.
 
-```bash
-yarn
-npx ganache-cli -l 20000000 --noVMErrorsOnRPCResponse && yarn test
-```
 
 Security and Liability
 ----------------------
